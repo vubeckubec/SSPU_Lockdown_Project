@@ -1,4 +1,3 @@
-Kalendář akcí
+Literatura
 =============
-
-Školní ukázkový projekt v Nette Framework
+Příklad do PVY
