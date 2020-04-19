@@ -1,0 +1,33 @@
+{block content}
+<table class="table table-striped table-inverse table-responsive" id="items">
+    <thead class="thead-inverse" style="background-color: #f1d2fc;">
+        <tr>
+            <th><a n:href="list 'title'">Název díla</a></th>
+            <th><a n:href="list 'author'">Autor</a></th>
+            <th><a n:href="list 'year DESC'">Rok vzniku</a></th>
+            <th><a n:href="list 'category'">Literární druh</a></th>
+            <th>Akce</th>
+        </tr>
+        </thead>
+        <tbody>
+            {foreach $literaturaList as $literatura}
+            <tr>
+                <td scope="row" style="text-align:left;"><a n:href="detail $literatura->id">{$literatura->title}</a></td>
+                <td>{$literatura->author}</td>
+                <td style="text-align:right;">{$literatura->year}</td>
+                <td style="text-align:center;">{$literatura->category}</td>
+                <td><a n:href="Literatura:update $literatura->id" class="btn btn-light">Editace</a> <a n:href="delete $literatura->id" class="btn btn-danger">Odstranění</a></td>
+            </tr>
+            {/foreach}
+        </tbody>
+</table>
+<p><a n:href="Literatura:insert" class="btn btn-primary">Nové dílo</a></p>
+{/block}
+
+{block scripts}
+{include parent}
+{/block}
+
+
+{block head}
+{/block}
